@@ -3,7 +3,7 @@
 #include "util.h"
 
 
-void game(int a){
+void game( int game_op ){
 	// int round_points1{0};
 	// int round_points2{0};
 	// int total_points1{0};
@@ -11,27 +11,36 @@ void game(int a){
 	std::string player1_name;
 	std::string player2_name;
 
-	std::cout << "Chose your Username:\n";
+	// getting player usernames
+	std::cout << ">>> Chose your Username:\n";
 	std::getline( std::cin, player1_name );
-	std::cout << "Chose your oponents' Username:\n";
-	std::getline( std::cin, player2_name );
-
-	if(a == 1){
-	std::cout<< "1" << std::endl;
-	// printscore(player1_name, player2_name, round_points1, total_points1, round_points2, total_points2);
-		/*while(total_points1 != 100 && total_points2 != 100){
-			clean_screen();
-			printscore(std::string player1_name, std::player2_name, round_points1, total_points1, round_points2, total_points2);
-			
-		}*/	
+	if( game_op == 1 ){
+		std::cout << ">>> Chose your oponents' Username:\n";
+		std::getline( std::cin, player2_name );
 	}
-	if(a == 2){
-	std::cout<< "2" << std::endl;
-		/*while(total_points1 != 100 && total_points2 != 100){
-			clean_screen();
-			printscore(std::string player1_name, std::player2_name, round_points1, total_points1, round_points2, total_points2);
-			
-		}*/	
+	if( game_op == 2 ){
+		player2_name = "CPU";
 	}
 
+	// game loop
+	while( true ){
+		// player 1 turn
+		std::cout << ">>> "<< player1_name << "'s turn:\n";
+		while( playerChoice() != 2 ){
+		}
+
+		std::cout << std::endl;
+
+		// player 2 turn
+		if( game_op == 1 ){
+			std::cout << ">>> "<< player2_name << "'s turn:\n";
+			while( playerChoice() != 2 ){
+			}
+		}
+		else{
+			// TODO: IA function.
+		}
+
+		std::cout << std::endl;
+	}
 }

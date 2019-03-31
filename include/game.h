@@ -5,6 +5,6 @@
 #include <vector>
 #include <string>
 
-void game(int a);
+void game( int game_op );
 
 #endif

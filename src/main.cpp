@@ -3,8 +3,17 @@
 
 
 int main(){
-	int a;
-	a = printmenu();
-	game(a);
-	return 0;
+	// Choosing game mode (PvP or PvIA)
+	int game_op;
+	game_op = printmenu();
+	if( game_op == -1 ){
+		return -1;
+	}
+
+	// Game loop
+	game( game_op );
+
+	
+
+	return EXIT_SUCCESS;
 }

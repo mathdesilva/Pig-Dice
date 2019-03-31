@@ -227,6 +227,12 @@ ask:
 	}
 }
 
+void printDiceResult( int value ){
+	std::string faces[] = {"⚀", "⚁", "⚂", "⚃", "⚄", "⚅"};
+	std::string names[] = {"(one)", "(two)", "(three)", "(four)", "(five)", "(six)"};
+	std::cout << "Dice result: " <<  faces[ value - 1 ] << " " 
+			  << names[ value - 1 ] << std::endl;
+}
 
 
 // TODO: finish score-printing function

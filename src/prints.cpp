@@ -1,10 +1,11 @@
 #include "prints.h"
+#include "util.h"
 
 int printmenu(){
 	struct winsize size;
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
 	// TODO: change to a clear function
-	system("clear");
+	clean_screen();
 	std::string op;
 	
 	for(int i=0; i<size.ws_col; i++){
@@ -98,8 +99,8 @@ int printmenu(){
 	}
 	std::getline( std::cin,  op);
 	// TODO: change to a clear function
-	system("clear");
-	system("clear");
+	clean_screen();
+	clean_screen();
 	
 	for(int i=0; i<size.ws_col; i++){
 		std::cout<<"#";
@@ -195,17 +196,16 @@ int printmenu(){
 	
 	std::getline( std::cin, op );
 	// TODO: change to a clear function
-	system("clear");
+	clean_screen();
 
 	// cleaning op input
 	if( op.size() > 1 or not ( op[0] == '1' or op[0] == '2' ) )
 		return -1;
 	else
 		return ( op[0] - 48 );
-
 }
 
-//  TODO: finish score-printing function
+// TODO: finish score-printing function
 // void printscore(std::string player1_name, std::string player2_name, int round_points1, int total_points1, int round_points2, int total_points2){
 
 // 	std::cout<<"#";
@@ -241,6 +241,4 @@ int printmenu(){
 // 		std::cout<<"=";
 // 	}
 // 	std::cout<<"#"<< std::endl;
-	
-
 // }

@@ -1,5 +1,6 @@
 #include "game.h"
 #include "prints.h"
+#include "util.h"
 
 
 void game(int a){
@@ -19,7 +20,7 @@ void game(int a){
 	std::cout<< "1" << std::endl;
 	// printscore(player1_name, player2_name, round_points1, total_points1, round_points2, total_points2);
 		/*while(total_points1 != 100 && total_points2 != 100){
-			system("clear");
+			clean_screen();
 			printscore(std::string player1_name, std::player2_name, round_points1, total_points1, round_points2, total_points2);
 			
 		}*/	
@@ -27,7 +28,7 @@ void game(int a){
 	if(a == 2){
 	std::cout<< "2" << std::endl;
 		/*while(total_points1 != 100 && total_points2 != 100){
-			system("clear");
+			clean_screen();
 			printscore(std::string player1_name, std::player2_name, round_points1, total_points1, round_points2, total_points2);
 			
 		}*/	

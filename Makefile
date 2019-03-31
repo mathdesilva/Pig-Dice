@@ -13,3 +13,6 @@ output: ./obj/main.o ./obj/prints.o ./obj/game.o
 ./obj/game.o: ./src/game.cpp ./include/game.h
 	mkdir -p obj
 	g++ -c ./src/game.cpp -I ./include -o ./obj/game.o -Wall -std=c++11
+
+clean:
+	rm -r obj bin

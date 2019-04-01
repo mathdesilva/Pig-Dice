@@ -3,12 +3,12 @@
 #define POINTS 10
 
 void game( int game_op ){
-	int n_rolls{0};
-	int diceValue{0};
 	int round_points1{0};
 	int round_points2{0};
 	int total_points1{0};
 	int total_points2{0};
+	int n_rolls{0};
+	int diceValue{0};
 	std::string player1_name;
 	std::string player2_name;
 
@@ -33,9 +33,21 @@ void game( int game_op ){
 	logf << player2_name << std::endl << std::endl;
 	logf << ">>> GAMEPLAY <<<" << std::endl;
 
-	// ========== GAME LOOP ==========================================
+	// randomizing first play choice
+	std::random_device dev;
+    std::mt19937 rng( dev() );
+    std::uniform_int_distribution<std::mt19937::result_type> dist6( 1, 2 );
+    if( dist6(rng) == 1 ){
+    	goto player_1;
+    }
+    else{
+    	goto player_2;
+    }
+
+	// ========== GAME LOOP =======================================================================
 	while( true ){
-		// --------------- player 1 turn --------------- 
+		player_1:
+		// --------------- player 1 turn ---------------------------------------------------------- 
 		round_points1 = 0;
 		std::cout << ">>> "<< player1_name << "'s turn:\n";
 		while( playerChoice() != 2 ){
@@ -52,7 +64,8 @@ void game( int game_op ){
 			std::cout << "Your round points: " << round_points1 << std::endl << std::endl;
 		}
 		total_points1 += round_points1;
-		// ---------------------------------------------
+		// ----------------------------------------------------------------------------------------
+
 		// adding points to log
 		if(round_points1 == 0){
 			logf << player1_name << " : PIG\n";
@@ -71,9 +84,10 @@ void game( int game_op ){
 		std::cout << "TEST total_points1:" << total_points1 << std::endl;
 		std::cout << std::endl << std::endl;
 
-		// --------------- player 2 turn ---------------
+		player_2:
+		// --------------- player 2 turn ----------------------------------------------------------
 		round_points2 = 0;
-		if( game_op == 1 ){					/* 2ND PLAYER */
+		if( game_op == 1 ){					/* >>> 2ND PLAYER <<< */
 			std::cout << ">>> "<< player2_name << "'s turn:\n";
 			while( playerChoice() != 2 ){
 				diceValue = dice( 6 );			// generating dice value
@@ -89,7 +103,7 @@ void game( int game_op ){
 				std::cout << "Your round points: " << round_points2 << std::endl << std::endl;
 			}
 		}
-		else{ 						/* ARTIFICIAL INTELLIGENCE */
+		else{ 						/* >>> ARTIFICIAL INTELLIGENCE <<< */
 			n_rolls = 1;
 			while( next_action_AI( round_points2, total_points2, total_points1, n_rolls ) != 2 ){
 				diceValue = dice( 6 );			// generating dice value
@@ -107,7 +121,8 @@ void game( int game_op ){
 			}
 		}
 		total_points2 += round_points2;
-		// ---------------------------------------------
+		// ----------------------------------------------------------------------------------------
+
 		// adding points to log
 		if(round_points2 == 0){
 			logf << player2_name << " : PIG\n";
@@ -126,7 +141,7 @@ void game( int game_op ){
 		std::cout << "TEST total_points2:" << total_points2 << std::endl;
 		std::cout << std::endl << std::endl;
 	}
-	// ===============================================================
+	// ============================================================================================
 
 	logf.close();
 }

@@ -210,7 +210,7 @@ int printmenu( void ){
 int playerChoice( void ){
 	std::string option;
 
-ask:
+	ask:
 	std::cout << "Roll the dice? [y/n]: ";
 	std::getline( std::cin, option );
 
@@ -232,6 +232,10 @@ void printDiceResult( int value ){
 	std::string names[] = {"(one)", "(two)", "(three)", "(four)", "(five)", "(six)"};
 	std::cout << "Dice result: " <<  faces[ value - 1 ] << " " 
 			  << names[ value - 1 ] << std::endl;
+}
+
+void printScore( std::string player1_name, int points1, std::string player1_name, int points1 ){
+	
 }
 
 

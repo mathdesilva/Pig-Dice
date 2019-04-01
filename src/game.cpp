@@ -5,10 +5,10 @@
 
 void game( int game_op ){
 	int diceValue{0};
-	// int round_points1{0};
-	// int round_points2{0};
-	// int total_points1{0};
-	// int total_points2{0};
+	int round_points1{0};
+	int round_points2{0};
+	int total_points1{0};
+	int total_points2{0};
 	std::string player1_name;
 	std::string player2_name;
 
@@ -22,6 +22,7 @@ void game( int game_op ){
 	if( game_op == 2 ){
 		player2_name = "CPU";
 	}
+	std::cout << std::endl << std::endl;
 
 	// ========== GAME LOOP ==========================================
 	while( true ){
@@ -30,6 +31,9 @@ void game( int game_op ){
 		while( playerChoice() != 2 ){
 			diceValue = dice( 6 );
 			printDiceResult(diceValue);
+
+			round_points1 += diceValue;
+			std::cout << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -40,6 +44,9 @@ void game( int game_op ){
 			while( playerChoice() != 2 ){
 				diceValue = dice( 6 );
 				printDiceResult(diceValue);
+				
+				round_points1 += diceValue;
+				std::cout << std::endl;
 			}
 		}
 		else{

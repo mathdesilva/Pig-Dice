@@ -19,6 +19,8 @@ int playerChoice( void );
 // print an "emoji" of dice value
 void printDiceResult( int value );
 
-// void printscore(std::string player1_name, std::string player2_name, int round_points1, int total_points1, int round_points2, int total_points2);
+// print a score table 
+void printScore( std::string player1_name, int points1, std::string player1_name, int points1 );
+
 
 #endif

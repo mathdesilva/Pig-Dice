@@ -33,7 +33,7 @@ void game( int game_op ){
 	logf << player2_name << std::endl << std::endl;
 	logf << ">>> GAMEPLAY <<<" << std::endl;
 
-	// randomizing first play choice
+	// randomizing first player choice
 	std::random_device dev;
     std::mt19937 rng( dev() );
     std::uniform_int_distribution<std::mt19937::result_type> dist6( 1, 2 );

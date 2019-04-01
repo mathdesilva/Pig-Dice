@@ -1,4 +1,4 @@
-output: ./obj/main.o ./obj/prints.o ./obj/game.o ./obj/util.o ./obj/ai.o
+./bin/main: ./obj/main.o ./obj/prints.o ./obj/game.o ./obj/util.o ./obj/ai.o
 	mkdir -p bin
 	g++ -Wall -std=c++11 ./obj/main.o ./obj/prints.o ./obj/game.o ./obj/util.o ./obj/ai.o -o ./bin/main
 

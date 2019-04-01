@@ -3,6 +3,7 @@
 #define POINTS 10
 
 void game( int game_op ){
+	int n_rolls{0};
 	int diceValue{0};
 	int round_points1{0};
 	int round_points2{0};
@@ -39,7 +40,7 @@ void game( int game_op ){
 		std::cout << ">>> "<< player1_name << "'s turn:\n";
 		while( playerChoice() != 2 ){
 			diceValue = dice( 6 );			// generating dice value
-			printDiceResult(diceValue);		// showing dice value
+			printDiceResult( diceValue );	// showing dice value
 
 			if( diceValue == 1 ){			// pig case
 				std::cout << "    PIG \n";
@@ -51,6 +52,7 @@ void game( int game_op ){
 			std::cout << "Your round points: " << round_points1 << std::endl << std::endl;
 		}
 		total_points1 += round_points1;
+		// ---------------------------------------------
 		// adding points to log
 		if(round_points1 == 0){
 			logf << player1_name << " : PIG\n";
@@ -64,7 +66,6 @@ void game( int game_op ){
 			logf << std::endl << "WINNER: " << player1_name << std::endl;
 			break;
 		}
-		// ---------------------------------------------
 
 		// TODO: show score table
 		std::cout << "TEST total_points1:" << total_points1 << std::endl;
@@ -72,11 +73,11 @@ void game( int game_op ){
 
 		// --------------- player 2 turn ---------------
 		round_points2 = 0;
-		if( game_op == 1 ){
+		if( game_op == 1 ){					/* 2ND PLAYER */
 			std::cout << ">>> "<< player2_name << "'s turn:\n";
 			while( playerChoice() != 2 ){
 				diceValue = dice( 6 );			// generating dice value
-				printDiceResult(diceValue);		// showing dice value
+				printDiceResult( diceValue );	// showing dice value
 
 				if( diceValue == 1 ){			// pig case
 					std::cout << "    PIG\n";
@@ -88,10 +89,25 @@ void game( int game_op ){
 				std::cout << "Your round points: " << round_points2 << std::endl << std::endl;
 			}
 		}
-		else{
-			// TODO: IA function.
+		else{ 						/* ARTIFICIAL INTELLIGENCE */
+			n_rolls = 1;
+			while( next_action_AI( round_points2, total_points2, total_points1, n_rolls ) != 2 ){
+				diceValue = dice( 6 );			// generating dice value
+				printDiceResult( diceValue );	// showing dice value
+
+				if( diceValue == 1 ){			// pig case
+					std::cout << "    PIG\n";
+					round_points2 = 0;
+					break;
+				}
+
+				round_points2 += diceValue;
+				std::cout << "CPU round points: " << round_points2 << std::endl;
+				n_rolls++;
+			}
 		}
 		total_points2 += round_points2;
+		// ---------------------------------------------
 		// adding points to log
 		if(round_points2 == 0){
 			logf << player2_name << " : PIG\n";
@@ -105,7 +121,6 @@ void game( int game_op ){
 			logf << std::endl << "WINNER: " << player2_name << std::endl;
 			break;
 		}
-		// ---------------------------------------------
 
 		// TODO: show score table
 		std::cout << "TEST total_points2:" << total_points2 << std::endl;

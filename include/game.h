@@ -9,6 +9,7 @@
 
 #include "prints.h"
 #include "util.h"
+#include "ai.h"
 
 void game( int game_op );
 

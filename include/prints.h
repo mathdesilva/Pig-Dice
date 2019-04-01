@@ -20,7 +20,7 @@ int playerChoice( void );
 void printDiceResult( int value );
 
 // print a score table 
-void printScore( std::string player1_name, int points1, std::string player1_name, int points1 );
+// void printScore( std::string player1_name, int points1, std::string player1_name, int points1 );
 
 
 #endif

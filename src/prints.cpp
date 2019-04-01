@@ -234,9 +234,9 @@ void printDiceResult( int value ){
 			  << names[ value - 1 ] << std::endl;
 }
 
-void printScore( std::string player1_name, int points1, std::string player1_name, int points1 ){
+// void printScore( std::string player1_name, int points1, std::string player1_name, int points1 ){
 	
-}
+// }
 
 
 // TODO: finish score-printing function

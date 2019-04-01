@@ -31,9 +31,8 @@ void game( int game_op ){
 		while( playerChoice() != 2 ){
 			diceValue = dice( 6 );
 			printDiceResult(diceValue);
-
 			round_points1 += diceValue;
-			std::cout << std::endl;
+			std::cout << "Your round points: " << round_points1 << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -44,7 +43,7 @@ void game( int game_op ){
 			while( playerChoice() != 2 ){
 				diceValue = dice( 6 );
 				printDiceResult(diceValue);
-				
+
 				round_points1 += diceValue;
 				std::cout << std::endl;
 			}

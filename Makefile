@@ -19,4 +19,4 @@ output: ./obj/main.o ./obj/prints.o ./obj/game.o ./obj/util.o
 	g++ -c ./src/util.cpp -I ./include -o ./obj/util.o -Wall -std=c++11
 
 clean:
-	rm -r obj bin
+	rm -r obj bin *.txt

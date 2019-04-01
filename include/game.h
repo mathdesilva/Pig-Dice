@@ -5,6 +5,10 @@
 #include <vector>
 #include <string>
 #include <random>
+#include <fstream>
+
+#include "prints.h"
+#include "util.h"
 
 void game( int game_op );
 

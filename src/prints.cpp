@@ -234,6 +234,28 @@ void printDiceResult( int value ){
 			  << names[ value - 1 ] << std::endl;
 }
 
+void printGoMessage( void ){
+	struct winsize size;
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
+
+	std::cout << std::setw( size.ws_col / 2 + 2) << std::setfill('>') << " GO " 
+			  << std::setw( size.ws_col / 2 - 2) << std::setfill('<') << "" << std::endl;
+}
+
+void printLog( void ){
+	struct winsize size;
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
+
+	std::cout << std::setw( size.ws_col / 2 + 2) << std::setfill('>') << " LOG " 
+			  << std::setw( size.ws_col / 2 - 3) << std::setfill('<') << "" << std::endl;
+
+	std::string logline;
+	std::ifstream logf ("log.txt");
+	while( std::getline( logf, logline ) ){
+		std::cout << logline << std::endl;
+	}
+	logf.close();
+}
 // void printScore( std::string player1_name, int points1, std::string player1_name, int points1 ){
 	
 // }

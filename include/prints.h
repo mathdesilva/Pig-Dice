@@ -5,6 +5,8 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <string>
+#include <iomanip>
+#include <fstream>
 
 // print main menu
 // return 1 to Player vs Player
@@ -18,6 +20,12 @@ int playerChoice( void );
 
 // print an "emoji" of dice value
 void printDiceResult( int value );
+
+// print go message
+void printGoMessage( void );
+
+// print log
+void printLog( void );
 
 // print a score table 
 // void printScore( std::string player1_name, int points1, std::string player1_name, int points1 );

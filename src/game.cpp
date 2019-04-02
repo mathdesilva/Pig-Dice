@@ -1,6 +1,6 @@
 #include "game.h"
 
-#define POINTS 100
+#define POINTS 20
 
 void game( int game_op ){
 	int round_points1{0};
@@ -23,6 +23,9 @@ void game( int game_op ){
 		player2_name = "CPU";
 	}
 	std::cout << std::endl << std::endl;
+
+	 // go message
+    printGoMessage();
 
 	// opening log file
 	std::ofstream logf ("log.txt");
@@ -87,8 +90,8 @@ void game( int game_op ){
 		player_2:
 		// --------------- player 2 turn ----------------------------------------------------------
 		round_points2 = 0;
+		std::cout << ">>> "<< player2_name << "'s turn:\n";
 		if( game_op == 1 ){					/* >>> 2ND PLAYER <<< */
-			std::cout << ">>> "<< player2_name << "'s turn:\n";
 			while( playerChoice() != 2 ){
 				diceValue = dice( 6 );			// generating dice value
 				printDiceResult( diceValue );	// showing dice value

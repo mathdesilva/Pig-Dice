@@ -1,6 +1,6 @@
 #include "game.h"
 
-#define POINTS 10
+#define POINTS 100
 
 void game( int game_op ){
 	int round_points1{0};

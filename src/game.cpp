@@ -78,13 +78,13 @@ void game( int game_op ){
 		}
 
 		if(total_points1 >= POINTS){
-			// TODO: Show winner name
+			std::cout << std::endl << std::endl << ">>> WINNER: " << player1_name << std::endl;
 			logf << std::endl << "WINNER: " << player1_name << std::endl;
 			break;
 		}
 
 		// TODO: show score table
-		std::cout << "TEST total_points1:" << total_points1 << std::endl;
+		std::cout << std::endl << "TEST total_points1:" << total_points1 << std::endl;
 		std::cout << std::endl << std::endl;
 
 		player_2:
@@ -135,13 +135,13 @@ void game( int game_op ){
 		}
 
 		if(total_points2 >= POINTS){
-			// TODO: Show winner name
+			std::cout << std::endl << std::endl << ">>> WINNER: " << player2_name << std::endl;
 			logf << std::endl << "WINNER: " << player2_name << std::endl;
 			break;
 		}
 
 		// TODO: show score table
-		std::cout << "TEST total_points2:" << total_points2 << std::endl;
+		std::cout << std::endl << "TEST total_points2:" << total_points2 << std::endl;
 		std::cout << std::endl << std::endl;
 	}
 	// ============================================================================================

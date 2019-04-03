@@ -28,7 +28,7 @@ void printGoMessage( void );
 void printLog( void );
 
 // print a score table 
-// void printScore( std::string player1_name, int points1, std::string player1_name, int points1 );
+void printscore(std::string player1_name, std::string player2_name, int total_points1, int total_points2);
 
 
 #endif

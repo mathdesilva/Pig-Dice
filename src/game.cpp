@@ -83,8 +83,7 @@ void game( int game_op ){
 			break;
 		}
 
-		// TODO: show score table
-		std::cout << std::endl << "TEST total_points1:" << total_points1 << std::endl;
+		printscore(player1_name, player2_name, total_points1, total_points2);
 		std::cout << std::endl << std::endl;
 
 		player_2:
@@ -140,8 +139,7 @@ void game( int game_op ){
 			break;
 		}
 
-		// TODO: show score table
-		std::cout << std::endl << "TEST total_points2:" << total_points2 << std::endl;
+		printscore(player1_name, player2_name, total_points1, total_points2);
 		std::cout << std::endl << std::endl;
 	}
 	// ============================================================================================

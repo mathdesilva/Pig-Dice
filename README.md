@@ -33,13 +33,17 @@ The player who scores **100** or more points at the end of a turn is the winner.
 ### Compile
 To compile the project, first you need to clone th repository with
 
-`git clone https://github.com/matheusmas132/Pig-Dice.git`
+```bash
+git clone https://github.com/matheusmas132/Pig-Dice.git
+```
 
 or download the project manualy.
 
 Go to project directory and use
 
-`make`
+```bash
+make
+```
 
 ### Run
 Type `bin/main` to run and enjoy!

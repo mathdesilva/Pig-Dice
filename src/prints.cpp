@@ -294,33 +294,35 @@ void printscore(std::string player1_name, std::string player2_name, int total_po
 	
 	
 	else if(player1_name.size() < player2_name.size()){
-	
+		
+		int player2_name_sz = player2_name.size();
+
 		std::cout<<"+";
-		for(int i=0; i<(player2_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player2_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 		
-		std::cout<<"|" << std::setw(player2_name.size()+2) << std::setfill(' ') << "Players" << "|" << std::setw(5+2) << "Points" << "|" << std::endl;
+		std::cout<<"|" << std::setw(player2_name_sz+2) << std::setfill(' ') << "Players" << "|" << std::setw(5+2) << "Points" << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player2_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player2_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 
-		std::cout<<"|" << std::setw(player2_name.size()+2) << player1_name << "|" << std::setw(5+2) << total_points1 << "|" << std::endl;
+		std::cout<<"|" << std::setw(player2_name_sz+2) << player1_name << "|" << std::setw(5+2) << total_points1 << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player2_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player2_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 
-		std::cout<<"|" << std::setw(player2_name.size()+2) << player2_name << "|" << std::setw(5+2) << total_points2 << "|" << std::endl;
+		std::cout<<"|" << std::setw(player2_name_sz+2) << player2_name << "|" << std::setw(5+2) << total_points2 << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player2_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player2_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
@@ -328,32 +330,34 @@ void printscore(std::string player1_name, std::string player2_name, int total_po
 	
 	else if(player1_name.size() > player2_name.size()){
 	
+		int player1_name_sz = player1_name.size();
+
 		std::cout<<"+";
-		for(int i=0; i<(player1_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player1_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 		
-		std::cout<<"|" << std::setw(player1_name.size()+2) << std::setfill(' ') << "Players" << "|" << std::setw(5+2) << "Points" << "|" << std::endl;
+		std::cout<<"|" << std::setw(player1_name_sz+2) << std::setfill(' ') << "Players" << "|" << std::setw(5+2) << "Points" << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player1_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player1_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 
-		std::cout<<"|" << std::setw(player1_name.size()+2) << player1_name << "|" << std::setw(5+2) << total_points1 << "|" << std::endl;
+		std::cout<<"|" << std::setw(player1_name_sz+2) << player1_name << "|" << std::setw(5+2) << total_points1 << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player1_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player1_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;
 
-		std::cout<<"|" << std::setw(player1_name.size()+2) << player2_name << "|" << std::setw(5+2) << total_points2 << "|" << std::endl;
+		std::cout<<"|" << std::setw(player1_name_sz+2) << player2_name << "|" << std::setw(5+2) << total_points2 << "|" << std::endl;
 
 		std::cout<<"+";
-		for(int i=0; i<(player1_name.size() + 5 + 5); i++){
+		for(int i=0; i<(player1_name_sz + 5 + 5); i++){
 			std::cout<<"-";
 		}
 		std::cout<<"+"<<std::endl;

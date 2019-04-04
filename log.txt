@@ -1,5 +1,0 @@
->>> PLAYERS <<<
-felip
-matthews
-
->>> GAMEPLAY <<<

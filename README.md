@@ -2,7 +2,7 @@
 
 This programming project implements a simple clone of the popular game **Pass the Pig**&copy; and **PigMania**&copy;.
 
-The main objective with this assignemnt is to introduce separate compiling, progressive programming (small versions towards the final full-fledged program), as well as to provide an oportunity to develop a project using the tools already taught such as git and doxygen.
+The main objective with this assignemnt is to introduce separate compiling, progressive programming (small versions towards the final full-fledged program), as well as to provide an oportunity to develop a project using the tools already taught such as git and cmake.
 
 ## The Gameplay
 Pig is a folk jeopardy dice game described by John Scarne in 1945, in which two players compete to reach **100 points** first.
@@ -27,6 +27,7 @@ The player who scores **100** or more points at the end of a turn is the winner.
 ## How to use
 
 ### Dependencies
+* `cmake`
 * `make`
 * `g++`
 
@@ -42,11 +43,13 @@ or download the project manualy.
 Go to project directory and use
 
 ```bash
+mkdir build && cd build
+cmake ../
 make
 ```
 
 ### Run
-Type `bin/main` to run and enjoy!
+Type `./PigDice` to run and enjoy!
 
 ## Authorship
 Program developed by [Matheus de Andrade](https://github.com/matheusmas132) and [Felipe Medeiros](https://github.com/felipecolares22), 2019.1

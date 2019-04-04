@@ -211,7 +211,7 @@ int playerChoice( void ){
 	std::string option;
 
 	ask:
-	std::cout << "Roll the dice? [y/n]: ";
+	std::cout << "-Roll the dice? [y/n]: ";
 	std::getline( std::cin, option );
 
 	// input cleaning
@@ -259,8 +259,11 @@ void printLog( void ){
 
 void printscore(std::string player1_name, std::string player2_name, int total_points1, int total_points2){
 	
+	std::cout << std::endl << std::endl;
+
 	if(player1_name.size() < 7 and player2_name.size() < 7){
-		
+		std::cout << std::setw((19 - 5) / 2) << std::setfill(' ') << "" << "SCORE" << std::setw((19 - 5) / 2) << "" << std::endl;
+
 		std::cout<<"+";
 		for(int i=0; i<(7 + 5 + 5); i++){
 			std::cout<<"-";
@@ -297,6 +300,8 @@ void printscore(std::string player1_name, std::string player2_name, int total_po
 		
 		int player2_name_sz = player2_name.size();
 
+		std::cout << std::setw((player2_name_sz + 5) / 2) << std::setfill(' ') << "" << "SCORE" << std::setw((player2_name_sz + 5) / 2) << "" << std::endl;
+
 		std::cout<<"+";
 		for(int i=0; i<(player2_name_sz + 5 + 5); i++){
 			std::cout<<"-";
@@ -331,6 +336,8 @@ void printscore(std::string player1_name, std::string player2_name, int total_po
 	else if(player1_name.size() > player2_name.size()){
 	
 		int player1_name_sz = player1_name.size();
+
+		std::cout << std::setw((player1_name_sz + 5) / 2) << std::setfill(' ') << "" << "SCORE" << std::setw((player1_name_sz + 5) / 2) << "" << std::endl;
 
 		std::cout<<"+";
 		for(int i=0; i<(player1_name_sz + 5 + 5); i++){

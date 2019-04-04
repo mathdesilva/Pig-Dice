@@ -58,13 +58,13 @@ void game( int game_op ){
 			printDiceResult( diceValue );	// showing dice value
 
 			if( diceValue == 1 ){			// pig case
-				std::cout << "    PIG \n";
+				std::cout << "--- P I G ---\n";
 				round_points1 = 0;
 				break;
 			}
 
 			round_points1 += diceValue;
-			std::cout << "Your round points: " << round_points1 << std::endl << std::endl;
+			std::cout << "Your round points: " << round_points1 << " (+" << diceValue << ")" << std::endl << std::endl;
 		}
 		total_points1 += round_points1;
 		// ----------------------------------------------------------------------------------------
@@ -78,6 +78,7 @@ void game( int game_op ){
 		}
 
 		if(total_points1 >= POINTS){
+			printscore(player1_name, player2_name, total_points1, total_points2);
 			std::cout << std::endl << std::endl << ">>> WINNER: " << player1_name << std::endl;
 			logf << std::endl << "WINNER: " << player1_name << std::endl;
 			break;
@@ -96,13 +97,13 @@ void game( int game_op ){
 				printDiceResult( diceValue );	// showing dice value
 
 				if( diceValue == 1 ){			// pig case
-					std::cout << "    PIG\n";
+					std::cout << "--- P I G ---\n";
 					round_points2 = 0;
 					break;
 				}
 
 				round_points2 += diceValue;
-				std::cout << "Your round points: " << round_points2 << std::endl << std::endl;
+				std::cout << "Your round points: " << round_points2 << " (+" << diceValue << ")" << std::endl << std::endl;
 			}
 		}
 		else{ 						/* >>> ARTIFICIAL INTELLIGENCE <<< */
@@ -112,13 +113,13 @@ void game( int game_op ){
 				printDiceResult( diceValue );	// showing dice value
 
 				if( diceValue == 1 ){			// pig case
-					std::cout << "    PIG\n";
+					std::cout << "--- P I G ---\n";
 					round_points2 = 0;
 					break;
 				}
 
 				round_points2 += diceValue;
-				std::cout << "CPU round points: " << round_points2 << std::endl;
+				std::cout << "CPU round points: " << round_points2 << " (+" << diceValue << ")" << std::endl;
 				n_rolls++;
 			}
 		}
@@ -134,6 +135,7 @@ void game( int game_op ){
 		}
 
 		if(total_points2 >= POINTS){
+			printscore(player1_name, player2_name, total_points1, total_points2);
 			std::cout << std::endl << std::endl << ">>> WINNER: " << player2_name << std::endl;
 			logf << std::endl << "WINNER: " << player2_name << std::endl;
 			break;

@@ -1,6 +1,6 @@
 #include "game.h"
 
-#define POINTS 20
+#define POINTS 100
 
 void game( int game_op ){
 	int round_points1{0};
@@ -13,10 +13,10 @@ void game( int game_op ){
 	std::string player2_name;
 
 	// getting player usernames
-	std::cout << ">>> Chose your Username:\n";
+	std::cout << ">>> Choose your Username:\n";
 	std::getline( std::cin, player1_name );
 	if( game_op == 1 ){
-		std::cout << ">>> Chose your oponents' Username:\n";
+		std::cout << ">>> Choose your oponents' Username:\n";
 		std::getline( std::cin, player2_name );
 	}
 	if( game_op == 2 ){
